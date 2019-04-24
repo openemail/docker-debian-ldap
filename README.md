@@ -1,4 +1,4 @@
-# osixia/openldap
+# openemail/openldap
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/osixia/openldap.svg)
 ![Docker Stars](https://img.shields.io/docker/stars/osixia/openldap.svg)
