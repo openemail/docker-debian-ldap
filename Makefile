@@ -1,18 +1,13 @@
 NAME = openemail/openldap
 VERSION = 1.2.4
 
-become:
-NAME = your/openldap
-VERSION = latest
-
 .PHONY: build build-nocache test tag-latest push push-latest release git-tag-version
 
 build:
-	docker build -t $(NAME):$(VERSION) --rm image
+	docker build -t $(NAME):$(VERSION) --rm .
 
 build-nocache:
-	docker build -t $(NAME):$(VERSION) --no-cache --rm image
-
+	docker build -t $(NAME):$(VERSION) --no-cache --rm .
 test:
 	env NAME=$(NAME) VERSION=$(VERSION) bats test/test.bats
 
