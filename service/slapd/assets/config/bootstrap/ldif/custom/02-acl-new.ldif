@@ -1,4 +1,4 @@
-dn: olcDatabase={1}mdb,cn=config
+dn: olcDatabase={1}{{ LDAP_BACKEND }},cn=config
 add: olcAccess
 olcAccess: to dn.regex=".+,vd=([^,]+),o=openemail,{{ LDAP_BASE_DN }}$" attrs=userPassword by dn="cn=admin,{{ LDAP_BASE_DN }}" write by self write by anonymous auth by dn.exact,expand="cn=postmaster,vd=$1,o=openemail,{{ LDAP_BASE_DN }}" write by set.expand="user/vd & [$1]" write
 olcAccess: to dn.regex=".+,vd=([^,]+),o=openemail,{{ LDAP_BASE_DN }}$" attrs=amavisBypassVirusChecks,quota,smtpAuth,accountActive by dn="cn=admin,{{ LDAP_BASE_DN }}" write by self read by dn.exact="cn=vmail,o=openemail,{{ LDAP_BASE_DN }}" read by set.expand="user/editAccounts & [TRUE]" write by dn.exact,expand="cn=postmaster,vd=$1,o=openemail,{{ LDAP_BASE_DN }}" read by set.expand="user/vd & [$1]" write
