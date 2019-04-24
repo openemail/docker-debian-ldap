@@ -1,0 +1,2 @@
+dn: olcDatabase={1}{{ LDAP_BACKEND }},cn=config
+delete: olcAccess
