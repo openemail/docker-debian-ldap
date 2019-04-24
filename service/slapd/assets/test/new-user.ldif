@@ -1,4 +1,4 @@
-dn: uid=billy,dc=example,dc=org
+dn: uid=billy,{{ LDAP_BASE_DN }}
 uid: billy
 cn: billy
 sn: 3
