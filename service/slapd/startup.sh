@@ -219,7 +219,7 @@ EOF
 
 
     log-helper info "Waiting for OpenLDAP to start..."
-    while [ ! -e /run/slapd/slapd.pid ]; do sleep 0.1; done
+    while [ ! -e /run/slapd/slapd.pid ]; do sleep 0.2; done
 
     #
     # setup bootstrap config - Part 2
